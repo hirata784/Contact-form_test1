@@ -25,12 +25,26 @@ th {
 }
 
 td {
-    color: #AD8D5A;
+    /* color: #AD8D5A; */
     text-align: left;
     vertical-align: middle;
     font-weight: normal;
     width: 600px;
     padding: 20px 40px;
+}
+
+.last_name,
+.first_name,
+.gender,
+.email,
+.tel_1,
+.address,
+.building,
+.content,
+.detail {
+    border: none;
+    outline: none;
+    color: #AD8D5A;
 }
 
 .btn {

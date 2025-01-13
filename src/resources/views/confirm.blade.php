@@ -11,35 +11,38 @@
         <table border="1">
             <tr>
                 <th>お名前</th>
-                <td>サンプル太郎</td>
+                <td>
+                    <input type="text" class="last_name" name="last_name" value="{{ $input['last_name'] }}{{ $input['first_name'] }}" readonly>
+                </td>
             </tr>
             <tr>
                 <th>性別</th>
-                <td>サンプル</td>
+                <td><input type="text" class="gender" name="gender" value="{{ $input['gender'] }}" readonly></td>
             </tr>
             <tr>
                 <th>メールアドレス</th>
-                <td>aaa@sss.com</td>
+                <td><input type="text" class="email" name="email" value="{{ $input['email'] }}" readonly></td>
             </tr>
             <tr>
                 <th>電話番号</th>
-                <td>0001112222</td>
+                <td><input type="text" class="tel_1" name="tel_1" value="{{ $input['tel_1'] }}{{ $input['tel_2'] }}{{ $input['tel_3'] }}" readonly></td>
             </tr>
             <tr>
                 <th>住所</th>
-                <td>どこどこ</td>
+                <td><input type="text" class="address" name="address" value="{{ $input['address'] }}" readonly>
+                </td>
             </tr>
             <tr>
                 <th>建物名</th>
-                <td>どこどこ</td>
+                <td><input type="text" class="building" name="building" value="{{ $input['building'] }}" readonly></td>
             </tr>
             <tr>
                 <th>お問い合わせの種類</th>
-                <td>なんでしょう</td>
+                <td><input type="text" class="content" name="content" value="{{ $input['content'] }}" readonly></td>
             </tr>
             <tr>
                 <th>お問い合わせ内容</th>
-                <td>メッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージメッセージ</td>
+                <td><input type="text" class="detail" name="detail" value="{{ $input['detail'] }}" readonly></td>
             </tr>
         </table>
         <div class="btn">

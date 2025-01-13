@@ -27,8 +27,8 @@ span {
     margin: 0 10px;
 }
 
-.last_name-text,
-.first_name-text {
+.last_name,
+.first_name {
     width: 250px;
     padding: 5px 0 5px 30px;
     margin: 0 10px;
@@ -38,7 +38,7 @@ span {
     margin-left: 40px;
 }
 
-.address_email,
+.email,
 .address,
 .building {
     width: 530px;
@@ -48,22 +48,26 @@ span {
 
 .tel {
     padding: 20px 30px;
-    display: flex;
-    justify-content: space-between;
 }
 
-.inquiry_type {
+.tel_1,
+.tel_2,
+.tel_3 {
+    margin: 0 5px;
+}
+
+.content {
     width: 265px;
     padding: 5px 0 5px 30px;
     margin: 0 10px;
 }
 
-.inquiry_content-th {
+.detail-th {
     vertical-align: top;
     padding-top: 20px;
 }
 
-.inquiry_content {
+.detail {
     line-height: 4;
     padding: 5px 20px;
     margin-left: 5px;
@@ -78,4 +82,9 @@ span {
     border-radius: 3px;
     padding: 10px 40px;
     margin: 30px auto;
+}
+
+.form_error{
+    color: red;
+    margin-left: 10px;
 }

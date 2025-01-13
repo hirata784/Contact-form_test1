@@ -19,10 +19,9 @@ use App\Http\Controllers\AuthController;
 // });
 
 Route::get('/', [AuthController::class, 'index']);
-Route::get('/admin', [AuthController::class, 'admin']);
-Route::get('/confirm', [AuthController::class, 'confirm']);
+Route::post('/confirm', [AuthController::class, 'confirm']);
 Route::get('/thanks', [AuthController::class, 'thanks']);
-
+Route::get('/admin', [AuthController::class, 'admin']);
 
 
 
