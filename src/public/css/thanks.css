@@ -1,0 +1,35 @@
+.relative {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2000x;
+    height: 1015px;
+    position: relative;
+}
+
+.next_character {
+    font-size: 300px;
+    color: #F5F5E4;
+}
+
+.absolute {
+    position: absolute;
+}
+
+.previous_character {
+    font-size: 32px;
+    color: #AD8D5A;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.home {
+    display: block;
+    background-color: #AD8D5A;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    margin: 0 auto;
+    transform: translateY(50px);
+}

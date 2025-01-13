@@ -1,0 +1,81 @@
+h1 {
+    color: #AD8D5A;
+    width: fit-content;
+    margin: 30px auto;
+    font-weight: normal;
+}
+
+.form {
+    width: fit-content;
+    margin: 0 auto;
+    color: #AD8D5A;
+}
+
+th {
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+    width: 300px;
+}
+
+td {
+    padding: 20px;
+}
+
+span {
+    color: red;
+    margin: 0 10px;
+}
+
+.last_name-text,
+.first_name-text {
+    width: 250px;
+    padding: 5px 0 5px 30px;
+    margin: 0 10px;
+}
+
+.gender input {
+    margin-left: 40px;
+}
+
+.address_email,
+.address,
+.building {
+    width: 530px;
+    padding: 5px 0 5px 30px;
+    margin: 0 10px;
+}
+
+.tel {
+    padding: 20px 30px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.inquiry_type {
+    width: 265px;
+    padding: 5px 0 5px 30px;
+    margin: 0 10px;
+}
+
+.inquiry_content-th {
+    vertical-align: top;
+    padding-top: 20px;
+}
+
+.inquiry_content {
+    line-height: 4;
+    padding: 5px 20px;
+    margin-left: 5px;
+    width: 540px;
+}
+
+.submit {
+    display: block;
+    background-color: #AD8D5A;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    margin: 30px auto;
+}

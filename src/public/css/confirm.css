@@ -1,0 +1,57 @@
+h1 {
+    color: #AD8D5A;
+    width: fit-content;
+    margin: 30px auto;
+    font-weight: normal;
+}
+
+.form {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+table {
+    border: #C0B5A5;
+}
+
+th {
+    background-color: #C0B5A5;
+    color: #FFF;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+    width: 250px;
+    padding: 20px 40px;
+}
+
+td {
+    color: #AD8D5A;
+    text-align: left;
+    vertical-align: middle;
+    font-weight: normal;
+    width: 600px;
+    padding: 20px 40px;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+}
+
+.submit {
+    display: block;
+    background-color: #AD8D5A;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    margin: 30px 15px;
+}
+
+.fixes {
+    display: flex;
+    color: #AD8D5A;
+    margin: 30px 15px;
+    justify-content: center;
+    align-items: center;
+}
