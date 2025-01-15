@@ -25,7 +25,6 @@
 
 .header-utilities nav {
     width: 18%;
-
 }
 
 /* .header-nav {
@@ -42,8 +41,10 @@
 .header-nav__button {
     /* display: block;
     float: right; */
-    border: none;
+    /* border: none; */
+    /* padding: 20px 40px; */
     background: #EBE5C7;
+    border: 1px solid #AD8D5A;
     color: #fff;
     font-size: 16px;
     cursor: pointer;

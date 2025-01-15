@@ -5,7 +5,9 @@
 @endsection
 
 @section('nav')
-<button class="header-nav__button">login</button>
+<form action="/login">
+    <button class="header-nav__button">login</button>
+</form>
 @endsection
 
 @section('content')
@@ -21,7 +23,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="text" name="name" value="{{ old('name') }}" placeholder="例:山田 太郎"/>
+                    <input type="text" name="name" value="{{ old('name') }}" placeholder="例:山田 太郎" />
                 </div>
                 <div class="form__error">
                     @error('name')
@@ -51,7 +53,7 @@
             </div>
             <div class="form__group-content">
                 <div class="form__input--text">
-                    <input type="password" name="password" placeholder="例:coachtech1106"/>
+                    <input type="password" name="password" placeholder="例:coachtech1106" />
                 </div>
                 <div class="form__error">
                     @error('password')
@@ -74,8 +76,5 @@
             <button class="form__button-submit" type="submit">登録</button>
         </div>
     </form>
-    <div class="login__link">
-        <a class="login__button-submit" href="/login">ログインの方はこちら</a>
-    </div>
 </div>
 @endsection

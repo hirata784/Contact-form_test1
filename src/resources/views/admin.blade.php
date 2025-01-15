@@ -5,13 +5,16 @@
 @endsection
 
 @section('nav')
-<button class="header-nav__button">logout</button>
+<form action="/login">
+    <button class=" header-nav__button">logout</button>
+</form>
 @endsection
 
 @section('content')
 <div>
     <h1>Admin</h1>
     <form action="">
+        @csrf
         <div>
             <input type="text" class="name" placeholder="名前やメールアドレスを入力して下さい">
 
@@ -37,10 +40,31 @@
 
         <div>
             <button>エクスポート</button>
+            {{ $contacts->links() }}
+
         </div>
 
-</div>
+        <div>
+            <table border="1">
+                <tr>
+                    <th>お名前</th>
+                    <th>性別</th>
+                    <th>メールアドレス</th>
+                    <th>お問い合わせの種類</th>
+                    <th>詳細</th>
+                </tr>
 
-</form>
+                @foreach($contacts as $contact)
+                <tr>
+                    <td>{{$contact['last_name']}} {{$contact['first_name']}}</td>
+                    <td>{{$contact['gender']}}</td>
+                    <td>{{$contact['email']}}</td>
+                    <td>{{$contact['category_id']}}</td>
+                    <td><button>詳細</button></td>
+                </tr>
+                @endforeach
+            </table>
+        </div>
+    </form>
 </div>
 @endsection
