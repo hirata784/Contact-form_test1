@@ -1,0 +1,57 @@
+h1 {
+    color: #AD8D5A;
+    width: fit-content;
+    margin: 30px auto;
+    font-weight: normal;
+}
+
+form{
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.name {
+    width: 280px;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.gender {
+    width: 80px;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.content {
+    width: 200px;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.date {
+    width: 130px;
+    padding: 10px 0;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.search {
+    background-color: #AD8D5A;
+    color: #FFF;
+    border: none;
+    border-radius: 1px;
+    padding: 10px 40px;
+    margin-right: 20px;
+}
+
+.reset {
+    background-color: #EBE5C7;
+    color: #FFF;
+    border: none;
+    border-radius: 1px;
+    padding: 10px 30px;
+    margin-right: 20px;
+}

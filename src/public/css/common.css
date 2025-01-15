@@ -25,13 +25,14 @@
 
 .header-utilities nav {
     width: 18%;
+
 }
 
-.header-nav {
+/* .header-nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
-}
+} */
 
 .header-nav__link {
     color: #fff;
@@ -39,8 +40,10 @@
 }
 
 .header-nav__button {
+    /* display: block;
+    float: right; */
     border: none;
-    background: transparent;
+    background: #EBE5C7;
     color: #fff;
     font-size: 16px;
     cursor: pointer;

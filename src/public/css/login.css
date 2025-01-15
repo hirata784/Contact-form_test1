@@ -1,18 +1,36 @@
+body {
+    margin: 0;
+}
+
+.login__content {
+    background-color: #EBE5C7;
+}
+
 .login-form__content {
     margin: 0 auto;
-    padding: 30px 15px;
+    /* padding: 30px 15px; */
     max-width: 1230px;
 }
 
 .login-form__heading {
-    margin-bottom: 20px;
     text-align: center;
+    color: #AD8D5A;
+    font-weight: normal;
 }
 
 .form {
     margin: 0 auto;
-    width: 25%;
+    width: 40%;
     text-align: center;
+    border: #AD8D5A solid 1px;
+    border-radius: 20px;
+    padding: 80px 100px;
+    background-color: #FFF;
+}
+
+span {
+    font-size: 24px;
+    color: #AD8D5A;
 }
 
 .form__group {
@@ -44,14 +62,20 @@
 }
 
 .form__button-submit {
-    padding: 10px;
+    background-color: #AD8D5A;
+    color: #FFF;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 40px;
+    margin: 30px 15px;
+    /* padding: 10px;
     width: 30%;
     height: 50px;
     border: none;
     border-radius: 3px;
     background: #000;
     color: #fff;
-    cursor: pointer;
+    cursor: pointer; */
 }
 
 .register__link {

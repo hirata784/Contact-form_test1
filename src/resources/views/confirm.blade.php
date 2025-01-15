@@ -7,13 +7,18 @@
 @section('content')
 <div>
     <h1>Confirm</h1>
-    <form class="form" action="/thanks" method="get">
+
+    <form class="form" action="/thanks" method="post">
+        @csrf
         <table border="1">
             <tr>
                 <th>お名前</th>
                 <td>
-                    <input type="text" class="last_name" name="last_name" value="{{ $input['last_name'] }}{{ $input['first_name'] }}" readonly>
+                    <input type="text" class="name" name="name" value="{{ $input['last_name'] }}  {{ $input['first_name'] }}" readonly>
                 </td>
+                <input type="hidden" name="last_name" value="{{ $input['last_name'] }}">
+                <input type="hidden" name="first_name" value="{{ $input['first_name'] }}">
+
             </tr>
             <tr>
                 <th>性別</th>
@@ -25,7 +30,10 @@
             </tr>
             <tr>
                 <th>電話番号</th>
-                <td><input type="text" class="tel_1" name="tel_1" value="{{ $input['tel_1'] }}{{ $input['tel_2'] }}{{ $input['tel_3'] }}" readonly></td>
+                <td><input type="text" class="tel" name="tel" value="{{ $input['tel_1'] }}{{ $input['tel_2'] }}{{ $input['tel_3'] }}" readonly></td>
+                <input type="hidden" name="tel_1" value="{{ $input['tel_1'] }}">
+                <input type="hidden" name="tel_2" value="{{ $input['tel_2'] }}">
+                <input type="hidden" name="tel_3" value="{{ $input['tel_3'] }}">
             </tr>
             <tr>
                 <th>住所</th>
@@ -38,7 +46,9 @@
             </tr>
             <tr>
                 <th>お問い合わせの種類</th>
-                <td><input type="text" class="content" name="content" value="{{ $input['content'] }}" readonly></td>
+                <td>
+                    <input type="text" class="content" name="content" value="{{ $input['content'] }}" readonly>
+                </td>
             </tr>
             <tr>
                 <th>お問い合わせ内容</th>
@@ -47,7 +57,7 @@
         </table>
         <div class="btn">
             <button class="submit">送信</button>
-            <a class="fixes" href="/">修正</a>
+            <a class="fixes" href="/thanks" name="back">修正</a>
             <!-- <button class="fixes">修正</button> -->
         </div>
     </form>

@@ -20,9 +20,11 @@ use App\Http\Controllers\AuthController;
 
 Route::get('/', [AuthController::class, 'index']);
 Route::post('/confirm', [AuthController::class, 'confirm']);
-Route::get('/thanks', [AuthController::class, 'thanks']);
+Route::get('/thanks', [AuthController::class, 'back']);
+Route::post('/thanks', [AuthController::class, 'thanks']);
 Route::get('/admin', [AuthController::class, 'admin']);
-
+// Route::get('/register', [AuthController::class, 'register']);
+// Route::get('/login', [AuthController::class, 'login']);
 
 
 

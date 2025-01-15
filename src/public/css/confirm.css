@@ -33,11 +33,10 @@ td {
     padding: 20px 40px;
 }
 
-.last_name,
-.first_name,
+.name,
 .gender,
 .email,
-.tel_1,
+.tel,
 .address,
 .building,
 .content,

@@ -97,7 +97,7 @@
             <tr>
                 <th><label>建物名</label></th>
                 <td>
-                    <input type="text" class="building" name="building" placeholder="例:千駄ヶ谷マンション101">
+                    <input type="text" class="building" name="building" value="{{ old('building') }}" placeholder="例:千駄ヶ谷マンション101">
                 </td>
             </tr>
 
@@ -106,12 +106,9 @@
                 <td>
                     <select class="content" name="content">
                         <option value="" selected>選択して下さい</option>
-                        <option value="サンプル1" @if("サンプル1"==old("content")) selected @endif>サンプル1</option>
-                        <option value="サンプル2" @if("サンプル2"==old("content")) selected @endif>サンプル2</option>
-                        <option value="サンプル3" @if("サンプル3"==old("content")) selected @endif>サンプル3</option>
-                        <option value="サンプル4" @if("サンプル4"==old("content")) selected @endif>サンプル4</option>
-                        <option value="サンプル5" @if("サンプル5"==old("content")) selected @endif>サンプル5</option>
-                        <option value="サンプル6" @if("サンプル"==old("content")) selected @endif>サンプル6</option>
+                        @foreach ($categories as $category)
+                        <option value="{{$category->content}}" @if(($category->content)==old("content")) selected @endif>{{$category->content}}</option>
+                        @endforeach
                     </select>
                     <div class="form_error">
                         @error('content')
