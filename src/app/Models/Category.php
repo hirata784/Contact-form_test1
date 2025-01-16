@@ -11,4 +11,9 @@ class Category extends Model
 
     protected $guarded = ['id'];
     protected $fillable = ['content'];
+
+    // Categoriesテーブルのcontentを返すメソッド
+    public function getContent() {
+        return $this->content;
+    }
 }

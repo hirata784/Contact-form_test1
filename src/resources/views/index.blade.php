@@ -107,7 +107,7 @@
                     <select class="content" name="content">
                         <option value="" selected>選択して下さい</option>
                         @foreach ($categories as $category)
-                        <option value="{{$category->content}}" @if(($category->content)==old("content")) selected @endif>{{$category->content}}</option>
+                        <option value="{{$category->content}}" @if("{{$category->content}}"==old("content")) selected @endif>{{$category->content}}</option>
                         @endforeach
                     </select>
                     <div class="form_error">

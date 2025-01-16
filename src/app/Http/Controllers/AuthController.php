@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Contact;
-// use Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use App\Http\Requests\AuthRequest;
 
 class AuthController extends Controller
@@ -35,13 +35,22 @@ class AuthController extends Controller
 
     public function thanks(AuthRequest $request)
     {
-        // category_id追加
-        // ex)1.商品のお届けについてならidの1を渡す
-        // $content = $request->only('content');
-        $request->merge(['category_id' => 1]);
+        // category_idを追加(お問い合わせの種類)
+        $content_str = $request->only('content');
 
-        // 性別表示変更
-        // 1:男性 2:女性 3:その他
+        if ($content_str['content'] == "商品のお届けについて") {
+            $request->merge(['category_id' => 1]);
+        } elseif ($content_str['content'] == "商品の交換について") {
+            $request->merge(['category_id' => 2]);
+        } elseif ($content_str['content'] == "商品トラブル") {
+            $request->merge(['category_id' => 3]);
+        } elseif ($content_str['content'] == "ショップへのお問い合わせ") {
+            $request->merge(['category_id' => 4]);
+        } elseif ($content_str['content'] == "その他") {
+            $request->merge(['category_id' => 5]);
+        }
+
+        // 性別を文字列から数値に変換
         $gender_str = $request->only('gender');
 
         if ($gender_str['gender'] == "男性") {
@@ -76,6 +85,33 @@ class AuthController extends Controller
         // $contacts = Contact::all();
         $contacts = Contact::Paginate(7);
 
+        // 性別を数値から文字列に変換
+        for ($i = 0; $i < count($contacts); $i++) {
+            if ($contacts[$i]['gender'] == 1) {
+                $contacts[$i]['gender'] = "男性";
+            } elseif ($contacts[$i]['gender'] == 2) {
+                $contacts[$i]['gender'] = "女性";
+            } elseif ($contacts[$i]['gender'] == 3) {
+                $contacts[$i]['gender'] = "その他";
+            }
+        }
+        return view('admin', compact('categories', 'contacts'));
+    }
+
+    public function search(Request $request)
+    {
+        // categoriesテーブル呼び出し
+        $categories = Category::all();
+
+        // contactsテーブル呼び出し
+        $contacts = Contact::with('category')
+            ->KeywordSearch($request->keyword)
+            ->GenderSearch($request->gender)
+            ->ContentSearch($request->content)
+            ->DateSearch($request->date)
+            ->Paginate(7);
+
+        // $contacts = Contact::Paginate(7)->KeywordSearch($request->keyword)->get();
 
         // 性別を数値から文字列に変換
         for ($i = 0; $i < count($contacts); $i++) {
@@ -88,26 +124,12 @@ class AuthController extends Controller
             }
         }
 
-        // // お問い合わせの種類を数値から文字列に変換
-        // for ($i = 0; $i < count($contacts); $i++) {
-        //     if ($contacts[$i]['category_id'] == 1) {
-        //         $contacts[$i]['category_id'] = "商品のお届けについて";
-        //     } elseif ($contacts[$i]['category_id'] == 2) {
-        //         $contacts[$i]['category_id'] = "商品の交換について";
-        //     } elseif ($contacts[$i]['category_id'] == 3) {
-        //         $contacts[$i]['category_id'] = "商品トラブル";
-        //     } elseif ($contacts[$i]['category_id'] == 4) {
-        //         $contacts[$i]['category_id'] = "ショップへのお問い合わせ";
-        //     } elseif ($contacts[$i]['category_id'] == 5) {
-        //         $contacts[$i]['category_id'] = "その他";
-        //     }
-        // }
-
-
-        // dd($contacts);
-        // dd($categories);
 
         return view('admin', compact('categories', 'contacts'));
+    }
+
+    public function reset(){
+        return redirect('/admin');
     }
 
     // public function register()

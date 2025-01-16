@@ -23,6 +23,10 @@ Route::post('/confirm', [AuthController::class, 'confirm']);
 Route::get('/thanks', [AuthController::class, 'back']);
 Route::post('/thanks', [AuthController::class, 'thanks']);
 Route::get('/admin', [AuthController::class, 'admin']);
+Route::get('/admin/search', [AuthController::class, 'search']);
+Route::get('/admin/reset', [AuthController::class, 'reset']);
+
+
 // Route::get('/register', [AuthController::class, 'register']);
 // Route::get('/login', [AuthController::class, 'login']);
 
