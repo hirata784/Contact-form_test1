@@ -26,7 +26,6 @@ Route::get('/admin', [AuthController::class, 'admin']);
 Route::get('/admin/search', [AuthController::class, 'search']);
 Route::get('/admin/reset', [AuthController::class, 'reset']);
 
-
 // Route::get('/register', [AuthController::class, 'register']);
 // Route::get('/login', [AuthController::class, 'login']);
 

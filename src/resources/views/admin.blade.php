@@ -5,7 +5,8 @@
 @endsection
 
 @section('nav')
-<form action="/login">
+<form action="{{route('logout')}}" method="post">
+    @csrf
     <button class=" header-nav__button">logout</button>
 </form>
 @endsection
@@ -71,5 +72,6 @@
         @endforeach
     </table>
 </div>
+
 </div>
 @endsection

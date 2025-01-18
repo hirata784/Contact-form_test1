@@ -57,8 +57,7 @@
         </table>
         <div class="btn">
             <button class="submit">送信</button>
-            <a class="fixes" href="/" name="back">修正</a>
-            <!-- <button class="fixes">修正</button> -->
+            <a class="fixes" onclick="history.back()" name="back">修正</a>
         </div>
     </form>
 </div>
