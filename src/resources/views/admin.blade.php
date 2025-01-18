@@ -14,42 +14,41 @@
 @section('content')
 <div>
     <h1>Admin</h1>
-    <form action="/admin/search" method="get">
-        @csrf
-        <div>
-            <input type="text" class="name" name="keyword" placeholder="名前やメールアドレスを入力して下さい">
+    <div class="form_inner">
+        <form action="/admin/search" method="get">
+            @csrf
+            <div>
+                <input type="text" class="name" name="keyword" placeholder="名前やメールアドレスを入力して下さい">
 
-            <select class="gender" name="gender">
-                <option value="" selected>性別</option>
-                <option value="">全て</option>
-                <option value="1">男性</option>
-                <option value="2">女性</option>
-                <option value="3">その他</option>
-            </select>
+                <select class="gender" name="gender">
+                    <option value="" selected>性別</option>
+                    <option value="">全て</option>
+                    <option value="1">男性</option>
+                    <option value="2">女性</option>
+                    <option value="3">その他</option>
+                </select>
 
-            <select class="content" name="content">
-                <option value="" selected>お問い合わせの種類</option>
-                @foreach ($categories as $category)
-                <option value="{{$category->id}}">{{$category->content}}</option>
-                @endforeach
-            </select>
+                <select class="content" name="content">
+                    <option value="" selected>お問い合わせの種類</option>
+                    @foreach ($categories as $category)
+                    <option value="{{$category->id}}">{{$category->content}}</option>
+                    @endforeach
+                </select>
 
-            <input type="date" class="date" name="date">
-            <button class="search">検索</button>
-    </form>
+                <input type="date" class="date" name="date">
+                <button class="search">検索</button>
+        </form>
 
-    <form action="/admin/reset" method="get">
-        @csrf
-        <button class="reset">リセット</button>
-    </form>
+        <form action="/admin/reset" method="get">
+            @csrf
+            <button class="reset">リセット</button>
+        </form>
+    </div>
 </div>
 
-<div>
-    <button>エクスポート</button>
+<div class="paginate">
+    {{$contacts->appends(request()->query())->links()}}
 </div>
-
-
-{{$contacts->appends(request()->query())->links()}}
 
 <div class="table">
     <table border="1">

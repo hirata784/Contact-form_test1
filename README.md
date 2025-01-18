@@ -21,6 +21,9 @@ Laravel環境構築
 - Laravel 8.83.29
 - MySQL 8.0.26
 
+## ER図
+![画像](https://coachtech-lms-bucket.s3.ap-northeast-1.amazonaws.com/question/20250118141935_%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%BC%E3%83%B3%E3%82%B7%E3%83%A7%E3%83%83%E3%83%88+2025-01-18%2014.19.09.png)
+
 ## URL
 - 開発環境：http://localhost/
 - phpMyAdmin：http://localhost:8080/
