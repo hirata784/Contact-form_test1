@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Contact;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\AuthRequest;
+
 
 class AuthController extends Controller
 {
@@ -82,7 +84,6 @@ class AuthController extends Controller
         $categories = Category::all();
 
         // contactsテーブル呼び出し
-        // $contacts = Contact::all();
         $contacts = Contact::Paginate(7);
 
         // 性別を数値から文字列に変換
@@ -111,8 +112,6 @@ class AuthController extends Controller
             ->DateSearch($request->date)
             ->Paginate(7);
 
-        // $contacts = Contact::Paginate(7)->KeywordSearch($request->keyword)->get();
-
         // 性別を数値から文字列に変換
         for ($i = 0; $i < count($contacts); $i++) {
             if ($contacts[$i]['gender'] == 1) {
@@ -123,22 +122,36 @@ class AuthController extends Controller
                 $contacts[$i]['gender'] = "その他";
             }
         }
-
-
         return view('admin', compact('categories', 'contacts'));
     }
 
-    public function reset(){
+    // データ削除
+    public function delete(Request $request)
+    {
+        Contact::find($request->id)->delete();
+
         return redirect('/admin');
     }
 
-    // public function register()
-    // {
-    //     return view('register');
-    // }
+    // 検索ページリセット
+    public function reset()
+    {
+        return redirect('/admin');
+    }
 
-    // public function login()
-    // {
-    //     return view('login');
-    // }
+    // ログイン画面表示
+    public function store(Request $request)
+    {
+        // loginしてる場合、強制logout
+        Auth::logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return view('/login');
+    }
+
+    public function register()
+    {
+        return view('login');
+    }
 }

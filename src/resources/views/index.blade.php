@@ -10,7 +10,7 @@
     <h1>Contact</h1>
     <form class="form" action="/confirm" method="post">
         @csrf
-        <table border="1">
+        <table>
             <tr>
                 <th><label>お名前<span>※</span></label></th>
                 <td>
