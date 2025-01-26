@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use Laravel\Fortify\Http\Controllers\AuthenticatedSessionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,12 +25,11 @@ Route::get('/thanks', [AuthController::class, 'back']);
 Route::post('/thanks', [AuthController::class, 'thanks']);
 Route::get('/admin', [AuthController::class, 'admin']);
 Route::get('/admin/search', [AuthController::class, 'search']);
+Route::delete('/admin/delete', [AuthController::class, 'delete'])->name('admin.delete');
 Route::get('/admin/reset', [AuthController::class, 'reset']);
 
-// Route::get('/register', [AuthController::class, 'register']);
-// Route::get('/login', [AuthController::class, 'login']);
-
-
+// ログイン画面
+Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
 // 認証ができていない場合は、ログインページが表示
 // Route::middleware('auth')->group(function () {

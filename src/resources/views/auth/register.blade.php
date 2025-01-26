@@ -15,7 +15,7 @@
     <div class="register-form__heading">
         <h2>Register</h2>
     </div>
-    <form class="form" action="/register" method="post">
+        <form class="form" action="/register" method="post">
         @csrf
         <div class="form__group">
             <div class="form__group-title">
@@ -59,16 +59,6 @@
                     @error('password')
                     {{ $message }}
                     @enderror
-                </div>
-            </div>
-        </div>
-        <div class="form__group">
-            <div class="form__group-title">
-                <span class="form__label--item">確認用パスワード</span>
-            </div>
-            <div class="form__group-content">
-                <div class="form__input--text">
-                    <input type="password" name="password_confirmation" />
                 </div>
             </div>
         </div>

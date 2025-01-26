@@ -10,7 +10,12 @@ form {
     margin: 0 auto;
 }
 
-svg.w-5.h-5{
+.paginate{
+    text-align: right;
+    padding-right: 350px;
+}
+
+svg.w-5.h-5 {
     /* paginateメソッドの矢印の大きさ調整のために追加 */
     width: 30px;
     height: 30px;
@@ -69,10 +74,16 @@ svg.w-5.h-5{
 th {
     padding: 15px 70px;
     background-color: #AD8D5A;
+    text-align: center;
     color: #FFF;
 }
 
-td{
+td {
     text-align: center;
     padding: 20px;
 }
+
+ .btn-secondary{
+    background-color: red;
+    border: none;
+ }
